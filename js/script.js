@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createBoard() {
         for (let i = 0; i < cardArray.length; i++) {
             const card = document.createElement('img')
-            card.setAttribute('src', 'img/quadrado.png')
+            card.setAttribute('src', 'img/grey.png')
             card.setAttribute('data-id', i)
             card.addEventListener('click', flipCard)
             grid.appendChild(card)
@@ -94,23 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const optionTwoId = cardsChosenId[1]
 
         if(optionOneId == optionTwoId) {
-            cards[optionOneId].setAttribute('src', 'img/quadrado.png')
-            cards[optionTwoId].setAttribute('src', 'img/quadrado.png')
+            cards[optionOneId].setAttribute('src', 'img/grey.png')
+            cards[optionTwoId].setAttribute('src', 'img/grey.png')
             alert('Você clicou no mesmo card!')
             erro++
             errorDisplay.textContent = " " + erro
         }
         else if (cardsChosen[0] === cardsChosen[1]) {
             alert('Você encontrou!')
-            cards[optionOneId].setAttribute('src', 'img/white.png')
-            cards[optionTwoId].setAttribute('src', 'img/white.png')
+            cards[optionOneId].setAttribute('src', 'img/black.png')
+            cards[optionTwoId].setAttribute('src', 'img/black.png')
             cards[optionOneId].removeEventListener('click', flipCard)
             cards[optionTwoId].removeEventListener('click', flipCard)
             cardsWon.push(cardsChosen)
         }
         else {
-            cards[optionOneId].setAttribute('src', 'img/quadrado.png')
-            cards[optionTwoId].setAttribute('src', 'img/quadrado.png')
+            cards[optionOneId].setAttribute('src', 'img/grey.png')
+            cards[optionTwoId].setAttribute('src', 'img/grey.png')
             alert('Desculpe, tente novamente!')
             erro++
             errorDisplay.textContent = " " + erro
